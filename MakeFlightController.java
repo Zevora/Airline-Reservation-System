@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
@@ -23,6 +24,8 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 
 import javafx.beans.value.*;
+import javafx.scene.layout.AnchorPane;
+
 import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 
 /**
@@ -31,6 +34,9 @@ import static jdk.nashorn.internal.objects.ArrayBufferView.length;
  * @author Lyan
  */
 public class MakeFlightController implements Initializable {
+
+    @FXML
+    private AnchorPane flightMakerPane;
 
     @FXML
     private TextField flightNum;
@@ -53,9 +59,18 @@ public class MakeFlightController implements Initializable {
     @FXML
     private TextField AvailableSeats;
 
+    @FXML Button backButton;
+
     @FXML
-    void flightMaker(ActionEvent event) throws FileNotFoundException, IOException {        
-        
+    void goBack (ActionEvent event) throws IOException
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        flightMakerPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void flightMaker(ActionEvent event) throws FileNotFoundException, IOException {
+
         //Below are the variables/entries entered into/retrieved from application
         String fNumber = flightNum.getText();
         String fDate = flightDate.getText();
@@ -65,10 +80,10 @@ public class MakeFlightController implements Initializable {
         String aCity = DestCity.getText();
         String numOfSeats = AvailableSeats.getText();
         System.out.println("made it this far"); //for debugging
-        
+
         //arraylist that contains the information
         ArrayList<String> flightReservation = new ArrayList<String>();
-        
+
         //adding flight info into arraylist
         flightReservation.add(fNumber);
         flightReservation.add(fDate);
@@ -77,19 +92,20 @@ public class MakeFlightController implements Initializable {
         flightReservation.add(dCity);
         flightReservation.add(aCity);
         flightReservation.add(numOfSeats);
-        
-        System.out.println("file created"); //for debugging 
-        
+
+        System.out.println("file created"); //for debugging
+
         //create filewriter to write to flights.txt file
         FileWriter flights = new FileWriter("flights.txt");
-        flights.write("Flight #\t FDate\t\t DTime\t\t ATime\t\t DepartCity\t\t DestCity\t\t AvailableSeats");
+        flights.write("Flight #\t FDate\t\t DTime\t\t ATime\t\t DepartCity\t\t DestCity\t\t AvailableSeats\n\n");
+        flights.write(System.getProperty("line.separator"));
         for(String str: flightReservation)
         {
             flights.write(str);
             flights.write("\t\t");
         }
         flights.close();
-        
+
         System.out.println("Contents added"); //for debugging
     }
 
@@ -97,6 +113,6 @@ public class MakeFlightController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
