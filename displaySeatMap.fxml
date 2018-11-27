@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="seatMapPane" prefHeight="666.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airplane.displaySeatMapController">
+    <children>
+        <Text fill="AQUA" layoutX="216.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here is your Seat Map!" wrappingWidth="250.41796875">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="76.0" text="Menu" />
+      <Button layoutX="250.0" layoutY="538.0" mnemonicParsing="false" onAction="#reserve" text="Confirm Reservation">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Text layoutX="497.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="There are 70 seats available">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="rowField" layoutX="398.0" layoutY="409.0" />
+      <TextField fx:id="columnField" layoutX="398.0" layoutY="461.0" />
+      <Text layoutX="193.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the row number:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="163.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the column number:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>
