@@ -23,6 +23,8 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 
 import javafx.beans.value.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 
 /**
@@ -33,60 +35,59 @@ import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 public class MakeFlightController implements Initializable {
 
     @FXML
-    private TextField flightNum;
+    private AnchorPane flightMakerPane;
+        
+    @FXML
+    public TextField flightNum;
 
     @FXML
-    private TextField DepartCity;
+    public TextField DepartCity;
 
     @FXML
-    private TextField flightDate;
+    public TextField flightDate;
 
     @FXML
-    private TextField ATime;
+    public TextField ATime;
 
     @FXML
-    private TextField DTime;
+    public TextField DTime;
 
     @FXML
-    private TextField DestCity;
+    public TextField DestCity;
 
     @FXML
-    private TextField AvailableSeats;
+    private Button backButton;
 
-    String fNumber="";
+    @FXML
+    private Button createFlight;
+    
+    @FXML
+    public TextField AvailableSeats;
+    String flightID = "";
     
     @FXML
     void flightMaker(ActionEvent event) throws FileNotFoundException, IOException {        
         
         //Below are the variables/entries entered into/retrieved from application
         String fNumber = flightNum.getText();
+        flightID = fNumber;
         String fDate = flightDate.getText();
         String dTime = DTime.getText();
         String aTime = ATime.getText();
         String dCity = DepartCity.getText();
         String aCity = DestCity.getText();
         String numOfSeats = AvailableSeats.getText();
-        System.out.println("made it this far"); //for debugging
+        System.out.println("Variables declared/defined"); //for debugging
+         
+        String[] flightRegistry = {fNumber,fDate,dTime,aTime,dCity,aCity,numOfSeats};
+        Flight flightID = new Flight(fNumber,fDate,dTime,aTime,dCity,aCity,numOfSeats); //create Flight object
+        System.out.println("Flight #"+this.flightID+" created"); //for debugging 
         
-        //arraylist that contains the information
-        ArrayList<String> flightReservation = new ArrayList<String>();
-        
-        //adding flight info into arraylist
-        flightReservation.add(fNumber);
-        flightReservation.add(fDate);
-        flightReservation.add(dTime);
-        flightReservation.add(aTime);
-        flightReservation.add(dCity);
-        flightReservation.add(aCity);
-        flightReservation.add(numOfSeats);
-        
-        System.out.println("file created"); //for debugging 
-        
-        //create filewriter to write to flights.txt file
-        FileWriter flights = new FileWriter("flights.txt");
+        //create filewriter to write to allFlights.txt file
+        FileWriter flights = new FileWriter("allFlights.txt");
         flights.write("Flight #\t FDate\t\t DTime\t\t ATime\t\t DepartCity\t\t DestCity\t\t AvailableSeats\n");
         flights.write(System.getProperty("line.separator"));
-        for(String str: flightReservation)
+        for(String str: flightRegistry)
         {
             flights.write(str);
             flights.write("\t\t");
@@ -100,17 +101,24 @@ public class MakeFlightController implements Initializable {
         System.out.println("Sending to mapMaker function"); //for debugging
     }
     
+    
+    @FXML
+    void goBack (ActionEvent event) throws IOException
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        flightMakerPane.getChildren().setAll(pane);
+    } 
+    
     @FXML
     public void mapMaker(String mapName) throws IOException{
         
         System.out.println("MapMaker part1"); //for debugging
-        FileWriter map = new FileWriter(fNumber+".txt"); //need to name after fNumber 
-        char[][] fNumber = new char[8][10]; //create a map of 7 columns by 10 rows
+        FileWriter map = new FileWriter(mapName+".txt"); //need to name after fNumber 
+        
+        char[][] fNumber = new char[8][10]; //create a map of 7 columns by 10 rows //need to name after fNumber
         System.out.println("Map created"); //for debugging
         
-        
-
-        int count=1;
+        int count=1;//counter that is equal to row+1 for row numbering
         
             for(int row=0;row<=9;row++){
                 char alphabet = 'A';
@@ -148,10 +156,10 @@ public class MakeFlightController implements Initializable {
         System.out.println("MapMaker closed"); //for debugging
     }
 
+    
+
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void initialize(URL url, ResourceBundle rb) {}    
     
 }
