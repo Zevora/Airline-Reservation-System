@@ -5,6 +5,7 @@
  */
 package airplane;
 
+import airplane.ClassFolder.Flight;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
@@ -113,11 +114,10 @@ public class MakeFlightController implements Initializable {
     public void mapMaker(String mapName) throws IOException{
         
         System.out.println("MapMaker part1"); //for debugging
-        FileWriter map = new FileWriter(mapName+".txt"); //need to name after fNumber 
+        FileWriter map = new FileWriter("Flight #"+mapName+".txt"); //names map after flight number
         
         char[][] fNumber = new char[8][10]; //create a map of 7 columns by 10 rows //need to name after fNumber
-        System.out.println("Map created"); //for debugging
-        
+        System.out.println("Map: "+fNumber+" created"); //for debugging
         int count=1;//counter that is equal to row+1 for row numbering
         
             for(int row=0;row<=9;row++){
@@ -146,7 +146,7 @@ public class MakeFlightController implements Initializable {
                     System.out.print(fNumber[col][row]);//for debugging
                     alphabet++;
                 }           
-                count++;
+                count++;//increment row counter
                 map.write(System.getProperty("line.separator"));//skips line in file
                 System.out.println("\n");//for debugging
             }            
