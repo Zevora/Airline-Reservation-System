@@ -1,5 +1,6 @@
-package airplane;
+package airplane.reservationsFolder;
 
+import airplane.ClassFolder.FlightReservations;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,6 +43,20 @@ public class displaySeatMapController
     @FXML
     void reserve(ActionEvent event) //button to Confirm the Reservation
     {
-
+        /*
+        Pseudocode begin
+        
+            read in passenger seat map file
+            user makes selection
+            if selection made
+                add remaining details to flight reservation 
+                update array of seating 
+                update seat count
+                update seat map
+                create reservations.txt file
+            
+            confirm reservation
+        
+        */
     }
 }

@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package airplane;
+package airplane.reservationsFolder;
 
 
+import airplane.ClassFolder.FlightReservations;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,9 +36,6 @@ public class ReservationController implements Initializable
    @FXML
     private AnchorPane reservationMakerPane;
 
-    //@FXML
-    //private Button makeReservation;
-
     @FXML
     private TextField flightNum;
 
@@ -52,12 +50,23 @@ public class ReservationController implements Initializable
 
     @FXML
     private TextField passName;
-
+    String reservationID = "";
 
     @FXML
-    void reservationMaker (ActionEvent event) throws IOException
+    public void displaySeatMap (ActionEvent event) throws IOException
     {
+        String fNumber = flightNum.getText();
+        String passengerID = passID.getText();
+        reservationID = passengerID;
+        String passengerName = passName.getText();
+        System.out.println("Variables defined");
         
+        FlightReservations reservationID = new FlightReservations();
+        System.out.println("Flight reservation: "+this.reservationID+" created");//for debugging
+        
+        AnchorPane displayMap = FXMLLoader.load(getClass().getResource("displaySeatMap.fxml"));
+        reservationMakerPane.getChildren().setAll(displayMap);
+        System.out.println("Display changed from initial reservation screen to display seat map");//for debugging
     }
 
     @FXML
