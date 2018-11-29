@@ -1,40 +1,35 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package airplane.ClassFolder;
+
+import airplane.MakeFlightController;
+import java.io.IOException;
 
 /**
  *
- * @author James C. Holland
- * 
- * Purpose: This file is to create a flight object that can be used to log flight info by flight number.
- * 
+ * @author Owner
  */
-
-public class Flight {
+public class Flight extends MakeFlightController {
     
-        String fNumber="";
-        String fDate="";
-        String dTime="";
-        String aTime="";
-        String dCity="";
-        String aCity="";
-        String numOfSeats="";
-        
-        //parameters necessary to satisfy flight creation
-        String[] parameters = {fNumber, fDate, dTime, aTime, dCity, aCity, numOfSeats};
-
-        
-    public Flight(){}
+    String fNumber,fDate,dTime,aTime,dCity,aCity,numOfSeats;
+    String[] paras = {fNumber,fDate,dTime,aTime,dCity,aCity,numOfSeats};
     
-    public Flight(String fNumber, String fDate, String dTime, 
-            String aTime, String dCity, String aCity, String numOfSeats){
-        
-        String[] givenParameters = {fNumber, fDate, dTime, aTime, dCity, aCity, numOfSeats};
-        
-        //Attempt at auto intializing parameters *I'm lazy*
-        for(int i=0;i<parameters.length;i++){
-            parameters[i] = givenParameters[i];
-            System.out.println("Parameter = "+parameters[i]+", given parameter = "+givenParameters[i]); //for debugging
+    public Flight(String[] flightRegistry) throws IOException{ //arg constructor for flight
+        for(int i=0;i<paras.length;i++){
+            paras[i] = flightRegistry[i];
+            System.out.println("Parameter = "+paras[i]+", given parameter = "+flightRegistry[i]); //for debugging
+            
         }
-        System.out.println("\n");
+        
+        Map.createFlightMap(flightRegistry[0]);
+        System.out.println("Sending to Map.createMap");
+    }
+    
+    public void setNumOfSeats(){//decrements seat count on each creation of a reservation
+        int newNumOfSeats = (Integer.parseInt(numOfSeats)-1);
+        numOfSeats = Integer.toString(newNumOfSeats);
     }
 }

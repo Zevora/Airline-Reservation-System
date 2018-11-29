@@ -5,6 +5,9 @@
  */
 package airplane.ClassFolder;
 
+import airplane.reservationsFolder.ReservationController;
+import java.io.IOException;
+
 /**
  *
  * @author James C. Holland
@@ -13,21 +16,17 @@ package airplane.ClassFolder;
  * 
  * 
  */
-public class FlightReservations extends Flight{
-    String seatNum="";
-    
-    public FlightReservations(){}
-    public FlightReservations(String fNumber, String fDate, String dTime, 
-            String aTime, String dCity, String aCity, String numOfSeats,String seatNum)
-    {
-        this.seatNum=seatNum;
-        String[] givenParameters = {fNumber, fDate, dTime, aTime, dCity, aCity, numOfSeats};
+public class FlightReservations extends ReservationController{
+    String seatNum="None Selected";
+    String flightNum = "";
+    String passID="";
+    String passName="";
+
+    public FlightReservations(String[] reservationInfo) throws IOException {
         
-        //Attempt at auto intializing parameters *I'm lazy*
-        for(int i=0;i<parameters.length;i++){
-            parameters[i] = givenParameters[i];
-            System.out.println("Parameter = "+parameters[i]+", given parameter = "+givenParameters[i]); //for debugging
-        }
-        System.out.println("\n");
+        
     }
+    
+    public String getFlightNum(){return flightNum;}
+    
 }
