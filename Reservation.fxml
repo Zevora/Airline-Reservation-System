@@ -13,9 +13,9 @@
             <Image url="file:/C:/Users/Lyan/Pictures/634-airplanes-1920x1200-minimalistic-wallpaper.jpg" />
          </image>
       </ImageView>
-      <Text fill="#00ffd4" layoutX="151.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make your Reservation!" wrappingWidth="406.5234375">
+      <Text fill="#00ffd4" layoutX="190.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make your Reservation!" wrappingWidth="406.5234375">
          <font>
-            <Font size="36.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="129.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight Number: ">
