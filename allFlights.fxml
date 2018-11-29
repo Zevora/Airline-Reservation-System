@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
-<AnchorPane id="AnchorPane" fx:id="flightMapPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airplane.AllFlightsController">
+<AnchorPane id="AnchorPane" fx:id="flightMapPane" prefHeight="619.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airplane.AllFlightsController">
    <children>
-      <Text fill="AQUA" layoutX="193.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here are all the flights!">
+      <ImageView fitHeight="619.0" fitWidth="787.0" layoutX="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Lyan/Pictures/634-airplanes-1920x1200-minimalistic-wallpaper.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="AQUA" layoutX="263.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here are all the flights!">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Text>
       <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="76.0" text="Back" />
