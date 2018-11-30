@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package airplane.ClassFolder;
+package airplane;
 
-import airplane.reservationsFolder.ReservationController;
 import java.io.IOException;
 
 /**
@@ -21,11 +20,18 @@ public class FlightReservations extends ReservationController{
     String flightNum = "";
     String passID="";
     String passName="";
+    String[] paras = {flightNum,passID,passName,seatNum};
+    String[] reservationInfo = null;
 
     public FlightReservations(String[] reservationInfo) throws IOException {
-        
-        
+        this.reservationInfo = reservationInfo;
+        for(int i=0;i<paras.length;i++){
+            paras[i] = reservationInfo[i];
+            System.out.println("Parameter = "+paras[i]+", given parameter = "+reservationInfo[i]); //for debugging
+            
+        }        
     }
+    public void setSeat(String seatNum){this.seatNum=seatNum;}
     
     public String getFlightNum(){return flightNum;}
     
