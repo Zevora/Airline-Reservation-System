@@ -14,14 +14,21 @@
     <children>
         <ImageView fitHeight="619.0" fitWidth="787.0" layoutX="-1.0" pickOnBounds="true">
             <image>
-                <Image url="file:/C:/Users/Lyan/Pictures/634-airplanes-1920x1200-minimalistic-wallpaper.jpg" />
+                <Image url="file:C:/Users/Owner/Desktop/Programming2/GroupProject/airplane_2/src/airplane/634-airplanes-1920x1200-minimalistic-wallpaper.jpg" />
             </image>
         </ImageView>
-        <Text fill="AQUA" layoutX="152.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here are all your reservations for your specific flights!" wrappingWidth="374.41796875">
+        <Text fill="AQUA" layoutX="60.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your flight number: " wrappingWidth="333.0">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
         <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="76.0" text="Back" />
+      <TextField fx:id="flightNumberField" layoutX="352.0" layoutY="92.0" />
+      <Label fx:id="reservationLabel" alignment="CENTER" layoutX="149.0" layoutY="160.0" prefHeight="419.0" prefWidth="507.0" style="-fx-background-color: white;" text="Reservations to be displayed here . . ." wrapText="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="enterButton" layoutX="618.0" layoutY="90.0" mnemonicParsing="false" onAction="#enterFlightNumber" prefHeight="44.0" prefWidth="76.0" text="Enter" />
     </children>
 </AnchorPane>
