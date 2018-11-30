@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package airplane.ClassFolder;
+package airplane;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
 /**
  *
- * @author James Holland
+ * @author Owner
  */
 public class Map extends Flight{
 
@@ -71,5 +71,7 @@ public class Map extends Flight{
         
         Map.flightMap = newFlightMap;
         Map.createFlightMap(flightID);
+        
+        System.out.println("Displaying new map: "+newFlightMap);
     }
 }
