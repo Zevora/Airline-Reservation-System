@@ -10,11 +10,11 @@ import java.io.IOException;
 
 /**
  *
- * @author Owner
+ * @author James Holland
  */
 public class Map extends Flight{
 
-    public static char[][] flightMap;
+    public static char[][] flightMap = new char[8][10]; //create a map of 8 columns by 10 rows //need to name after fNumber
 
     public Map(String[] flightRegistry) throws IOException { //netbeans complains if this isn't present
         super(flightRegistry);
@@ -26,7 +26,7 @@ public class Map extends Flight{
         System.out.println("Beginning createFlightMap . . ."); //for debugging
         FileWriter map = new FileWriter("Flight #"+flightID+".txt"); //names file written to after flightID
         
-        flightMap = new char[8][10]; //create a map of 8 columns by 10 rows //need to name after fNumber
+        
         System.out.println("Map: "+flightID+" created"); //for debugging
         int count=1;//counter that is equal to row+1 for row numbering
         
@@ -65,5 +65,11 @@ public class Map extends Flight{
         map.close();
         System.out.println("MapMaker closed"); //for debugging
 
+    }
+    
+    public static void updateMap(String flightID, char[][] newFlightMap) throws IOException{
+        
+        Map.flightMap = newFlightMap;
+        Map.createFlightMap(flightID);
     }
 }
