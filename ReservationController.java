@@ -3,22 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package airplane.reservationsFolder;
+package airplane;
 
 
-import airplane.ClassFolder.FlightReservations;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 
-import javafx.beans.value.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
@@ -37,13 +33,13 @@ public class ReservationController implements Initializable
     private AnchorPane reservationMakerPane;
 
     @FXML
-    private TextField flightNum;
+    public TextField flightNum;
 
     @FXML
     private TextField numSeats;
 
     @FXML
-    private TextField passID;
+    public TextField passID;
 
     @FXML
     private Button backButton;
@@ -51,19 +47,27 @@ public class ReservationController implements Initializable
     @FXML
     private TextField passName;
     String reservationID = "";
-
+    String seatNum="";
+    
     @FXML
     public void displaySeatMap (ActionEvent event) throws IOException
     {
-        String fNumber = flightNum.getText();
-        String passengerID = passID.getText();
-        reservationID = passengerID;
-        String passengerName = passName.getText();
-        System.out.println("Variables defined");
+        String fNumber = flightNum.getText(); //get flight number from textfield
+        String passengerID = passID.getText(); //get passenger id from textfield
+        reservationID = passengerID; //set reservationID to passengerID -- to be used for file/var naming
+        String passengerName = passName.getText(); //get passenger name from textfield
+        System.out.println("Variables defined"); //for debugging
         
-        FlightReservations reservationID = new FlightReservations();
+        String[] reservationInfo = {passengerID, passengerName, seatNum, fNumber}; //create string to contain reservationInfo
+                
+        //create a flight reservation named after reservationID -- round about way of using passengerID
+        FlightReservations reservationID = new FlightReservations(reservationInfo);
+        
+        //FlightReservations reservationID = new FlightReservations(reservationInfo);
+
         System.out.println("Flight reservation: "+this.reservationID+" created");//for debugging
         
+        //switching to new pane
         AnchorPane displayMap = FXMLLoader.load(getClass().getResource("displaySeatMap.fxml"));
         reservationMakerPane.getChildren().setAll(displayMap);
         System.out.println("Display changed from initial reservation screen to display seat map");//for debugging
