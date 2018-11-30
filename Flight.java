@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package airplane.ClassFolder;
+package airplane;
 
-import airplane.MakeFlightController;
 import java.io.IOException;
 
 /**
  *
- * @author Owner
+ * @author James Holland
  */
 public class Flight extends MakeFlightController {
     
