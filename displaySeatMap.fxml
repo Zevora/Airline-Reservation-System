@@ -9,33 +9,28 @@
 
 <AnchorPane id="AnchorPane" fx:id="seatMapPane" prefHeight="666.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airplane.displaySeatMapController">
     <children>
-        <Text fill="AQUA" layoutX="216.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here is your Seat Map!" wrappingWidth="250.41796875">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Text>
         <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="76.0" text="Menu" />
-      <Button layoutX="250.0" layoutY="538.0" mnemonicParsing="false" onAction="#reserve" text="Confirm Reservation">
+      <Button layoutX="252.0" layoutY="584.0" mnemonicParsing="false" onAction="#reserve" text="Confirm Reservation">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Text layoutX="497.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="There are 70 seats available">
+      <TextField fx:id="rowField" alignment="CENTER" layoutX="151.0" layoutY="518.0" promptText="Enter row letter" />
+      <TextField fx:id="columnField" alignment="CENTER" layoutX="376.0" layoutY="518.0" promptText="Enter column letter" />
+      <Label fx:id="displayLabel" alignment="CENTER" layoutX="120.0" layoutY="71.0" prefHeight="405.0" prefWidth="507.0" style="-fx-background-color: white;" text="Make selection . . ." wrapText="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Text fx:id="availableSeatLabel" layoutX="265.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="There are 70 seats available">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="rowField" layoutX="398.0" layoutY="409.0" />
-      <TextField fx:id="columnField" layoutX="398.0" layoutY="461.0" />
-      <Text layoutX="193.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the row number:">
+      <Label fx:id="flightLabel" alignment="CENTER" layoutX="204.0" layoutY="23.0" prefHeight="35.0" prefWidth="340.0" text="Flight: ">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
-      </Text>
-      <Text layoutX="163.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the column number:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
+      </Label>
     </children>
 </AnchorPane>
