@@ -5,7 +5,6 @@
  */
 package airplane;
 
-import airplane.ClassFolder.Flight;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -57,6 +56,15 @@ public class MakeFlightController implements Initializable {
     @FXML
     public TextField AvailableSeats;
     String flight = "";
+    
+        
+    @FXML
+    void goBack (ActionEvent event) throws IOException
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        flightMakerPane.getChildren().setAll(pane);
+    } 
+    
     @FXML
     void flightMaker(ActionEvent event) throws FileNotFoundException, IOException {        
         
@@ -91,13 +99,7 @@ public class MakeFlightController implements Initializable {
         
         System.out.println("Contents added"); //for debugging
     }
-        
-    @FXML
-    void goBack (ActionEvent event) throws IOException
-    {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        flightMakerPane.getChildren().setAll(pane);
-    } 
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {}    
