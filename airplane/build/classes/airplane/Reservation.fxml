@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="reservationMakerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airplane.ReservationController">
+   <children>
+      <Text fill="#00ffd4" layoutX="209.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make your Reservation!" wrappingWidth="406.5234375">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="167.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight Number: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="flightNum" layoutX="412.0" layoutY="132.0" promptText="Enter flight number" />
+      <Text layoutX="158.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Seats:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="numSeats" layoutX="412.0" layoutY="177.0" promptText="Enter Number of seats" />
+      <Text layoutX="172.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger ID:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="172.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger Name:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="passID" layoutX="412.0" layoutY="224.0" promptText="Enter Passenger ID#" />
+      <TextField fx:id="passName" layoutX="412.0" layoutY="267.0" promptText="ex: Mike Hawk" />
+            <Button fx:id="backButton" layoutX="29.0" layoutY="24.0" mnemonicParsing="false" onAction="#goBack" prefHeight="57.0" prefWidth="61.0" text="Back">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="213.0" layoutY="341.0" mnemonicParsing="false" onAction="#reservationMaker" text="Make Reservation">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

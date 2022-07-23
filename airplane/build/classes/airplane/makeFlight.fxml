@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="flightMakerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airplane.MakeFlightController">
+   <children>
+      <Text fill="#00ffd4" layoutX="237.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make your flight!" wrappingWidth="274.5234375">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="167.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight Number: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="flightNum" layoutX="412.0" layoutY="132.0" />
+      <Text layoutX="177.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight Date:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="flightDate" layoutX="412.0" layoutY="177.0" />
+      <Text layoutX="172.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure Time:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="172.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival Time:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="170.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure City:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="162.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination City:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="154.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# of available seats:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="DTime" layoutX="412.0" layoutY="224.0" />
+      <TextField fx:id="ATime" layoutX="412.0" layoutY="267.0" />
+      <TextField fx:id="DepartCity" layoutX="412.0" layoutY="305.0" />
+      <TextField fx:id="DestCity" layoutX="412.0" layoutY="354.0" />
+      <TextField fx:id="AvailableSeats" layoutX="412.0" layoutY="393.0" />
+      <Button fx:id="createFlight" layoutX="256.0" layoutY="503.0" mnemonicParsing="false" onAction="#flightMaker" prefHeight="51.0" prefWidth="237.0" text="Make Flight">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="29.0" layoutY="24.0" mnemonicParsing="false" onAction="#goBack" prefHeight="57.0" prefWidth="61.0" text="Back">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

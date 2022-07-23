@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainMenu" prefHeight="619.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airplane.FXMLDocumentController">
+   <children>
+      <Button fx:id="newFlight" layoutX="65.0" layoutY="106.0" mnemonicParsing="false" onAction="#addFlight" prefHeight="51.0" prefWidth="239.0" text="Add a new flight">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="newReservation" layoutX="495.0" layoutY="106.0" mnemonicParsing="false" onAction="#makeReservation" text="Make a Reservation">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="listFlights" layoutX="65.0" layoutY="221.0" mnemonicParsing="false" onAction="#listFlights" prefHeight="51.0" prefWidth="239.0" text="List all flights">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="listReservations" layoutX="65.0" layoutY="344.0" mnemonicParsing="false" onAction="#listAllReservationsAllFlights" prefHeight="139.0" prefWidth="239.0" text="List all passenger reservations for all flights" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="displaySeats" layoutX="495.0" layoutY="221.0" mnemonicParsing="false" onAction="#displaySeats" prefHeight="96.0" prefWidth="239.0" text="Display passengers seats map" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Text fill="#ff3535" layoutX="291.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="specificFlight" layoutX="495.0" layoutY="344.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="239.0" text="List all passenger reservations for specific flight" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" layoutY="570.0" mnemonicParsing="false" onAction="#exit" prefHeight="51.0" prefWidth="786.0" text="Exit" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
